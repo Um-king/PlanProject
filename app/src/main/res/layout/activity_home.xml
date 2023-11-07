@@ -6,7 +6,7 @@
     <data>
         <variable
             name="activity"
-            type="com.example.myapplication.view.activity.LoginActivity" />
+            type="com.example.myapplication.view.fragment.HomeFragment" />
     </data>
 
     <LinearLayout
@@ -19,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
-            <HorizontalScrollView
-                android:id="@+id/scrollView"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/countriesList0"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -82,3 +82,5 @@
     </LinearLayout>
 
 </layout>
+
+    <!--가로 스크롤 참고 https://taek2.tistory.com/13-->

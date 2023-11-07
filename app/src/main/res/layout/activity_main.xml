@@ -5,7 +5,7 @@
     <data>
         <variable
             name="activity"
-            type="com.example.myapplication.view.activity.MainActivity" />
+            type="com.example.myapplication.view.activity.MainActivity" /> <!--view.activity 폴더내의 Activity명-->
     </data>
 
     <LinearLayout
