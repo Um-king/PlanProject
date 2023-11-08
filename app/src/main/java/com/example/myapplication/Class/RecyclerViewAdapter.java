@@ -25,7 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 
             userImg = itemView.findViewById(R.id.userImg);
-            //txtUserName = itemView.findViewById(R.id.txtUserName);
+            txtUserName = itemView.findViewById(R.id.txtUserName);
         }
     }
 
@@ -54,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         String str = mList.get(position);
 
         //holder.userImg.setImageResource(R.drawable.icon_user);   // 사진 없어서 기본 파일로 이미지 띄움
-        //holder.txtUserName.setText(str);
+        holder.txtUserName.setText(str);
     }
 
     @Override
