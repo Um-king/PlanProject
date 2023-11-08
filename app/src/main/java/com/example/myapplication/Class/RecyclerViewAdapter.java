@@ -16,17 +16,16 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgView_item;
-        TextView txt_main;
-        TextView txt_sub;
+        ImageView userImg;
+        TextView txtUserName;
+        TextView txtUserID;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imgView_item = (ImageView) itemView.findViewById(R.id.imgView_item);
-            txt_main = (TextView) itemView.findViewById(R.id.txt_main);
-            txt_sub = (TextView) itemView.findViewById(R.id.txt_sub);
+            userImg = itemView.findViewById(R.id.userImg);
+            //txtUserName = itemView.findViewById(R.id.txtUserName);
         }
     }
 
@@ -43,19 +42,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.activity_recycler_item, parent, false);
+        View view = inflater.inflate(R.layout.listview_user, parent, false);
         RecyclerViewAdapter.ViewHolder vh = new RecyclerViewAdapter.ViewHolder(view);
-        return vh;
+        return new RecyclerViewAdapter.ViewHolder(view);
     }
 
     // position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        RecyclerViewItem item = mList.get(position);
 
-        holder.imgView_item.setImageResource(R.drawable.ic_launcher_background);   // 사진 없어서 기본 파일로 이미지 띄움
-        holder.txt_main.setText(item.getMainText());
-        holder.txt_sub.setText(item.getSubText());
+        String str = mList.get(position);
+
+        //holder.userImg.setImageResource(R.drawable.icon_user);   // 사진 없어서 기본 파일로 이미지 띄움
+        //holder.txtUserName.setText(str);
     }
 
     @Override
