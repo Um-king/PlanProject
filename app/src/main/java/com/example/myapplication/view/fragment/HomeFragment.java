@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.Class.RecyclerViewAdapter;
 import com.example.myapplication.R;
 
-import com.example.myapplication.databinding.ActivityHomeBinding;
+import com.example.myapplication.databinding.ActivityHomeV2Binding;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    ActivityHomeBinding binding;
+    ActivityHomeV2Binding binding;
 
     private RecyclerView userRecyclerView;
     private RecyclerViewAdapter userRecyclerViewAdapter;
@@ -36,8 +36,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        binding = ActivityHomeV2Binding.inflate(inflater);
+
+
         // fragment에서 findViewById는 Fragment의 view가 inflate하기전에 컴포넌트를 호출하기 때문에 return 하기전에 해줘야한다.
-        View v = inflater.inflate(R.layout.activity_home, container, false);
+        View v = inflater.inflate(R.layout.activity_home_v2, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(v.getContext(), RecyclerView.HORIZONTAL, false);
         userRecyclerView = v.findViewById(R.id.list0);
         userRecyclerView.setLayoutManager(linearLayoutManager);
