@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         String str = mList.get(position);
 
-        //holder.userImg.setImageResource(R.drawable.icon_user);   // 사진 없어서 기본 파일로 이미지 띄움
+        holder.userImg.setImageResource(R.drawable.icon_user);
         holder.txtUserName.setText(str);
     }
 

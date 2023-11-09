@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,9 +22,15 @@ public class HomeFragment extends Fragment {
 
     ActivityHomeBinding binding;
 
-    private RecyclerView mRecyclerView;
-    private ArrayList<String> mList;
-    private RecyclerViewAdapter mRecyclerViewAdapter;
+    private RecyclerView userRecyclerView;
+    private RecyclerViewAdapter userRecyclerViewAdapter;
+    private ArrayList<String> userList;
+
+
+    private ArrayList<String> todayList;
+    private RecyclerViewAdapter todayRecyclerViewAdapter;
+    private RecyclerView todayRecyclerView;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,9 +39,11 @@ public class HomeFragment extends Fragment {
         // fragment에서 findViewById는 Fragment의 view가 inflate하기전에 컴포넌트를 호출하기 때문에 return 하기전에 해줘야한다.
         View v = inflater.inflate(R.layout.activity_home, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(v.getContext(), RecyclerView.HORIZONTAL, false);
-        mRecyclerView = v.findViewById(R.id.countriesList0);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        //mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL), linearLayoutManager.getOrientation());
+        userRecyclerView = v.findViewById(R.id.list0);
+        userRecyclerView.setLayoutManager(linearLayoutManager);
+
+        todayRecyclerView = v.findViewById(R.id.list1);
+        todayRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
         init();
 
@@ -46,19 +53,25 @@ public class HomeFragment extends Fragment {
 
     private void init(){
 
-        mList = new ArrayList<>();
+        // user 내역 생성
+        userList = new ArrayList<>();
 
-
-        for(int i = 0; i < 5; i++){
-            addItem("Test" + i);
+        for(int i = 0; i < 30; i++){
+            userList.add("Test" + i);
         }
 
-        mRecyclerViewAdapter = new RecyclerViewAdapter(mList);
-        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        userRecyclerViewAdapter = new RecyclerViewAdapter(userList);
+        userRecyclerView.setAdapter(userRecyclerViewAdapter);
 
-    }
 
-    private void addItem(String testName){
-        mList.add(testName);
+
+        // 오늘 할일 생성
+        todayList = new ArrayList<>();
+        for(int i = 0; i < 30; i++){
+            todayList.add("Test" + i);
+        }
+
+        todayRecyclerViewAdapter = new RecyclerViewAdapter(todayList);
+        todayRecyclerView.setAdapter(todayRecyclerViewAdapter);
     }
 }
