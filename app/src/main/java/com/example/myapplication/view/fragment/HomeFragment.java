@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Class.RecyclerViewAdapter;
+import com.example.myapplication.view.adapter.RecyclerViewAdapter;
 import com.example.myapplication.R;
 
 import com.example.myapplication.databinding.ActivityHomeV2Binding;

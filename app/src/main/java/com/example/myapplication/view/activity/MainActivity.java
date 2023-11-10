@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         /*초기화*/
         init();
+        /*데이터 호출*/
+        GetData();
     }
 
     private void init(){
@@ -78,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
 
         /* 맨 처음 시작할 탭 설정 */
         bottomNavigationView.setSelectedItemId(R.id.tab_home);
+    }
+
+    private  void GetData(){
+
     }
 
     @Override
