@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.view.adapter.RecyclerViewAdapter;
 import com.example.myapplication.R;
 
-import com.example.myapplication.databinding.ActivityHomeV2Binding;
+import com.example.myapplication.databinding.ActivityHomeV3Binding;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    ActivityHomeV2Binding binding;
+    ActivityHomeV3Binding binding;
 
     private RecyclerView userRecyclerView;
     private RecyclerViewAdapter userRecyclerViewAdapter;
@@ -34,17 +34,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = ActivityHomeV2Binding.inflate(inflater);
+        binding = ActivityHomeV3Binding.inflate(inflater);
 
 
         // fragment에서 findViewById는 Fragment의 view가 inflate하기전에 컴포넌트를 호출하기 때문에 return 하기전에 해줘야한다.
-        View v = inflater.inflate(R.layout.activity_home_v2, container, false);
+        View v = inflater.inflate(R.layout.activity_home_v3, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(v.getContext(), RecyclerView.HORIZONTAL, false);
         userRecyclerView = v.findViewById(R.id.list0);
         userRecyclerView.setLayoutManager(linearLayoutManager);
 
-        todayRecyclerView = v.findViewById(R.id.list1);
-        todayRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
+//        todayRecyclerView = v.findViewById(R.id.list1);
+//        todayRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
         init();
 
@@ -66,13 +66,13 @@ public class HomeFragment extends Fragment {
 
 
 
-        // 오늘 할일 생성
-        todayList = new ArrayList<>();
-        for(int i = 0; i < 30; i++){
-            todayList.add("Test" + i);
-        }
-
-        todayRecyclerViewAdapter = new RecyclerViewAdapter(todayList);
-        todayRecyclerView.setAdapter(todayRecyclerViewAdapter);
+//        // 오늘 할일 생성
+//        todayList = new ArrayList<>();
+//        for(int i = 0; i < 30; i++){
+//            todayList.add("Test" + i);
+//        }
+//
+//        todayRecyclerViewAdapter = new RecyclerViewAdapter(todayList);
+//        todayRecyclerView.setAdapter(todayRecyclerViewAdapter);
     }
 }

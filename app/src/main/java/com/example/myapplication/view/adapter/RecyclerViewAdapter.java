@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         String str = mList.get(position);
 
-        holder.userImg.setImageResource(R.drawable.icon_user);
+        holder.userImg.setImageResource(R.drawable.icon_user2);
         holder.txtUserName.setText(str);
     }
 
