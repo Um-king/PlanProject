@@ -8,3 +8,4 @@
         android:topRightRadius="10dp"
         android:topLeftRadius="10dp"/> <!--둥근 정도-->
 </shape>
+

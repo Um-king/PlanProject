@@ -9,11 +9,12 @@
             type="com.example.myapplication.view.activity.LoginActivity" />
     </data>
 
+    <!--원래: F2F2F2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F2F2F2"
+        android:background="#F2F4F6"
         android:weightSum="10">
 
         <LinearLayout
