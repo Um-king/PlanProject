@@ -11,6 +11,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityMainBinding;
 import com.example.myapplication.view.Lib.BackPressControl;
 import com.example.myapplication.view.fragment.CalendarFragment;
+import com.example.myapplication.view.fragment.CalendarFragment2;
 import com.example.myapplication.view.fragment.HomeFragment;
 import com.example.myapplication.view.fragment.SettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     HomeFragment homeFragment;
     SettingFragment settingFragment;
     CalendarFragment calendarFragment;
+
+    CalendarFragment2 calendarFragment2;
 
     /*하단 탭 매뉴 변수*/
     BottomNavigationView bottomNavigationView;
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         settingFragment = new SettingFragment();
         calendarFragment = new CalendarFragment();
+
+        calendarFragment2 = new CalendarFragment2();
 
         /* 초기화면 설정 */
         getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, homeFragment).commit();
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case R.id.tab_calendar:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, calendarFragment).commit();
+//                                getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, calendarFragment2).commit();
                                 return true;
 
                             case R.id.tab_setting:

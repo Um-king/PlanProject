@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:baselineAligned="true"
     tools:ignore="MissingDefaultResource"
-    android:background="#F2F4F6">
+    android:background="#F6F7FA">
 
     <LinearLayout
         android:id="@+id/userViewList"

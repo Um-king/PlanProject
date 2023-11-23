@@ -1,4 +1,4 @@
-package com.example.myapplication.view.object;
+package com.example.myapplication.view.object.Decorator;
 
 import android.graphics.Color;
 import android.text.style.ForegroundColorSpan;
