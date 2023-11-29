@@ -32,13 +32,13 @@ public class EventDecorator implements DayViewDecorator {
         this.color = color;
         this.dates = new HashSet<>(dates);
 
-        this.drawable = context.getDrawable(R.drawable.borderline_kakaologinbtn);
+        //this.drawable = context.getDrawable(R.drawable.borderline_kakaologinbtn);
     }
 
     @Override
     public boolean shouldDecorate(CalendarDay day) {
-        //return dates.contains(day);
-        return true; // true 리턴시 모든 요일에 내가 설정한 드로어블이 적용된다.
+        return dates.contains(day);
+        //return true; // true 리턴시 모든 요일에 내가 설정한 드로어블이 적용된다.
     }
 
     @Override
@@ -66,10 +66,10 @@ public class EventDecorator implements DayViewDecorator {
             }
         }
 
-        view.setSelectionDrawable(drawable);
+        //view.setSelectionDrawable(drawable);
 
         // 점을 여러개 출력
-        //view.addSpan(new CustomMultipleDotSpan(7f, colors));
+        view.addSpan(new CustomMultipleDotSpan(7f, colors));
     }
 }
 
